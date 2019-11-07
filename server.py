@@ -10,7 +10,7 @@ def before_request():
 
 
 @app.after_request
-def after_request():
+def after_request(response):
     db.close()
     return response
 
@@ -23,6 +23,11 @@ def migrate():
 @app.route("/")
 def index():
     return render_template('index.html')
+
+
+@app.route("/store")
+def store():
+    return render_template('store.html')
 
 
 if __name__ == '__main__':
