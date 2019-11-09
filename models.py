@@ -9,7 +9,7 @@ class BaseModel(pw.Model):
     created_at = pw.DateTimeField(default=datetime.datetime.now)
     updated_at = pw.DateTimeField(default=datetime.datetime.now)
 
-    def save(self, * args, **kwargs):
+    def save(self, *args, **kwargs):
         self.updated_at = datetime.datetime.now()
         return super(BaseModel, self).save(*args, **kwargs)
 

@@ -1,8 +1,11 @@
 {% extends "_layout.html" %}
 {% block content %}
 <h1>STORE</h1>
-<form action="" method="post">
-    <input type="text" placeholder="Store Name"></input>
-    <button>Submit</button>
+<form action="{{url_for('create_store')}}" method="POST">
+    <div>
+        <label>Store:</label>
+        <input name="store_name" type="text" placeholder="Store Name"></input>
+        <button>Submit</button>
+    </div>
 </form>
 {% endblock %}
